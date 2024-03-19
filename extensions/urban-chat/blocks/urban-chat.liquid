@@ -1,0 +1,31 @@
+
+    <script>
+      const urbanChatbotId = "dffb124f-3d75-4e33-a682-205137863f5d"
+      const shopURL = '{{ shop.permanent_domain }}';
+      console.log(shopURL)
+      var chkURL = 'https://urbanchat.ai/api/fetch-chatbot-with-shopify?shopify_store_url='+shopURL;
+      console.log(chkURL)
+      fetch(chkURL)
+      .then(response => {
+       
+        return response.json();
+      })
+      .then(data => {
+        console.log(data)
+        var scriptUrl = data.scriptUrl;
+        var script = document.createElement('script');
+        script.src = "https://urbanchat.ai/integration/chatbot-integration.js";
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error('Fetch error:', error);
+      });
+
+    </script>
+    {% schema %}
+{
+  "name": "Urban Chat",
+  "target": "body",
+  "settings": []
+}
+{% endschema %}
