@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "06878b4a88ace6e1c52dc02f1079bc00"
+name = "urban-chat"
+application_url = "https://reveal-vehicles-opposite-lenders.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-596a1932.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://reveal-vehicles-opposite-lenders.trycloudflare.com/auth/callback",
+  "https://reveal-vehicles-opposite-lenders.trycloudflare.com/auth/shopify/callback",
+  "https://reveal-vehicles-opposite-lenders.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[pos]
+embedded = false
